@@ -140,8 +140,10 @@ public class TriangleArea {
     }
 
     void printResult() {
-
-
+        System.out.println("For P1(" + x1.get() + ","  + y1.get() + ")," +
+                " P2(" + x2.get() + "," + y2.get() + ")," +
+                " P3(" + x3.get() + "," + y3.get() + ")," +
+                " the area of triangle ABC is " + area.getValue());
     }
 
     private void createBinding() {
@@ -162,10 +164,8 @@ public class TriangleArea {
         NumberBinding a2 = add(a1, s3);
 
         NumberBinding c1 = when(a2.greaterThan(0)).then(a2).otherwise(negate(a2));
-        NumberBinding d1 = divide(c1,2.0);
+        NumberBinding d1 = divide(c1,2.0); 
         area.bind(d1);
-
-
 
 
     }
